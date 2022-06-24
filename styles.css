@@ -1,0 +1,78 @@
+
+/* Global styles */
+
+:root {
+    font-size: 16px;
+    height: 200%;
+}
+
+body {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 12% 40% 50% 90% 8%;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-areas: 'header header header'
+                          'hero hero hero'
+                          'info info info'
+                          'space projects space'
+                          'footer footer footer';
+}
+ul {
+    list-style: none;
+}
+li {
+    display: inline-block;
+}
+h1 {
+    font-size: 6rem;
+    font-family: 'Comfortaa', Arial, sans-serif;
+    font-weight: 700;
+}
+h2, h3, strong, p, img {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+h2 {
+    font-size: 4rem;
+    font-weight: 500;
+}
+h3 {
+    font-size: 2.5rem;
+}
+strong {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+img {
+    width: 500%;
+    height: auto;
+}
+
+/* Page Styles */
+
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    grid-area: header;
+    border: 1px solid red;
+}
+footer {
+    display: flex;
+    flex-wrap: nowrap;
+    grid-area: footer;
+}
+
+.hero {
+    grid-area: hero;
+}
+.info {
+    grid-area: info;
+}
+.projects {
+    grid-area: projects;
+}
+
+
+/* Compatibility */

@@ -7,9 +7,20 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="./reset.css" type="text/css" rel="stylesheet">
    <link href="./styles.css" type="text/css" rel="stylesheet">
-   <script src="./main.js" defer></script>
+   <script src="./resources/main.js" defer></script>
    <title>Mateo Fain | Frontend Portfolio</title>
+   <style>
+      @font-face {
+         font-family: 'Comfortaa';
+         src: url(./resources/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf);
+      }
+      @font-face {
+         font-family: 'Outfit';
+         src: url(./resources/fonts/Outfit/Outfit-VariableFont_wght.ttf);
+      }
+   </style>
 </head>
 <body>
    <header>
@@ -44,6 +55,8 @@
             learned to use HTML (semantic, forms, ARIA attributes), Advanced pure CSS (flexbox, grid, design theory, browser compatibility) and Javascript (loops, iterators, 
             modifying DOM). I feel comfortable coding responsive, accessible and interactive layouts, also from solving problems using Javascript and I aim to learn frameworks 
             like Bootstrap and React. I consider myself great at team-working and I like interacting with other people on the team. I am native in spanish and fluent on english (B1).
+            Lorem ipsum dolor sitn amet, consectetur adipisicing elit. Assumenda perspiciatis rem rerum repellendus corrupti doloremque quas. Earum in voluptates voluptatibus! Fugit
+            nisi ipsa saepe consectetur commodi qui eligendi laborum vero?.
          </p>
          <img src="./resources/images/" alt=""><h3 class="dropdown">Contact me</h3>
          <p>I am active in social media like Twitter and I post weekly blogs on Dev.to</p>
@@ -51,19 +64,21 @@
          <a href=""></a><img src="./resources/images/" alt="View my posts on Dev.to" /></a>
          <a href=""></a><img src="./resources/images/" alt="See my Linkedin profile" /></a>
          <img src="./resources/images/" alt=""><h3 class="dropdown">Pricing and availability</h3>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda perspiciatis rem rerum repellendus corrupti doloremque quas. 
+         Earum in voluptates voluptatibus! Fugit nisi ipsa saepe consectetur commodi qui eligendi laborum vero?</p>
       </article>
       <article class="projects">
          <h2>My Projects</h2>
-         <div class="image-container">
+         <div class="image-container" role="presentation">
             <img src="./resources/images/testimonials.png" alt="">
             <h3>Testimonials Grid Section</h3>
             <p>A fully responsive testimonial section for a company using CSS grid Layout</p>
          </div>
-         <div class="image-container">
+         <div class="image-container" role="presentation">
             <img src="./resources/images/nft.png" alt="">
             <h3>NFT Preview Card</h3>
          </div>
-         <div class="image-container">
+         <div class="image-container" role="presentation">
             <img src="./resources/images/responsive.png" alt="">
             <h3>Responsive Club Website</h3>
          </div>
