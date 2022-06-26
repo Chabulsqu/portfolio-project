@@ -9,7 +9,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="./reset.css" type="text/css" rel="stylesheet">
    <link href="./styles.css" type="text/css" rel="stylesheet">
-   <script src="./resources/main.js" defer></script>
    <title>Mateo Fain | Frontend Portfolio</title>
    <style>
       @font-face {
@@ -21,35 +20,34 @@
          src: url(./resources/fonts/Outfit/Outfit-VariableFont_wght.ttf);
       }
    </style>
+   <script src="./resources/main.js" defer></script>
 </head>
 <body>
    <header>
-      <em>Mateo Fain</em>
+      <em>Mateo_Fain</em>
       <nav>
          <ul role="presentation">
             <li><a href="#">Home</a></li>
-            <li><a href="#about">About me</a></li>
-            <li><button><a href="./proyectos.html" role="presentation">View my projects</a></button></li>
+            <li><a href="#about">About</a></li>
+            <li><button>View my projects</button></li>
             <li><img src="./resources/images/dark_mode.svg" alt="Toggle Dark Mode" /></li>
-            <li><button class="slide"></button></li>
+            <li>
+               <input type="checkbox">
+               <span class="check" onmouseover="toggle()"></span>
+            </li>
          </ul>
       </nav>
    </header>
    <main>
-      <section class="hero">
+      <section class="hero" id="banner">
          <h1>Welcome to my Portfolio</h1>
-         <img src="./resources/images/" alt="Change background image" />
-         <img src="./resources/images/" aria-hidden="true" />
-         <div class="circles" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-         </div>
+         <img src="./resources/images/left_arrow.svg" id="arrow-left" aria-label="Change background gradient"></img>
+         <img src="./resources/images/right_arrow.svg" id="arrow-right" aria-hidden="true"></img>
       </section>
-      <article class="info" id="about">
+      <!-- <article class="info" id="about">
          <h2>About me</h2>
          <img src="./resources/images/" alt="My profile picture" />
-         <strong>Freelance Frontend Developer with 4+ months of experience</strong>
+         <h3>Freelance Frontend Developer with 4+ months of experience</h3>
          <p>
             I started coding back when I was 13, using Youtube Python tutorials, later on I started taking online courses (mostly on Codecademy) on Front end Web Development, I
             learned to use HTML (semantic, forms, ARIA attributes), Advanced pure CSS (flexbox, grid, design theory, browser compatibility) and Javascript (loops, iterators, 
@@ -58,12 +56,12 @@
             Lorem ipsum dolor sitn amet, consectetur adipisicing elit. Assumenda perspiciatis rem rerum repellendus corrupti doloremque quas. Earum in voluptates voluptatibus! Fugit
             nisi ipsa saepe consectetur commodi qui eligendi laborum vero?.
          </p>
-         <img src="./resources/images/" alt=""><h3 class="dropdown">Contact me</h3>
+         <img src="./resources/images/" alt=""><h4 class="dropdown">Contact me</h4>
          <p>I am active in social media like Twitter and I post weekly blogs on Dev.to</p>
          <a href=""></a><img src="./resources/images/" alt="Check my Twitter!" /></a>
          <a href=""></a><img src="./resources/images/" alt="View my posts on Dev.to" /></a>
          <a href=""></a><img src="./resources/images/" alt="See my Linkedin profile" /></a>
-         <img src="./resources/images/" alt=""><h3 class="dropdown">Pricing and availability</h3>
+         <img src="./resources/images/" alt=""><h4 class="dropdown">Pricing and availability</h4>
          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda perspiciatis rem rerum repellendus corrupti doloremque quas. 
          Earum in voluptates voluptatibus! Fugit nisi ipsa saepe consectetur commodi qui eligendi laborum vero?</p>
       </article>
@@ -73,14 +71,17 @@
             <img src="./resources/images/testimonials.png" alt="">
             <h3>Testimonials Grid Section</h3>
             <p>A fully responsive testimonial section for a company using CSS grid Layout</p>
+            <a href="">View code</a>
          </div>
          <div class="image-container" role="presentation">
             <img src="./resources/images/nft.png" alt="">
             <h3>NFT Preview Card</h3>
+            <a href="">View code</a>
          </div>
          <div class="image-container" role="presentation">
-            <img src="./resources/images/responsive.png" alt="">
+            <img src="./resources/images/sports.png" alt="">
             <h3>Responsive Club Website</h3>
+            <a href="">View code</a>
          </div>
          <button><a href="./proyectos.html">See more of my projects</a></button>
       </article>
@@ -88,6 +89,6 @@
    <footer>
       <p>Found a bug or issue? Report it <a href="https://github.com/Chabulsqu/portfolio_project/issues">here</a></p>
       <p>copyright</p>
-   </footer>
+   </footer> -->
 </body>
 </html>

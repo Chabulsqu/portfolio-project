@@ -1,12 +1,20 @@
+* {
+    box-sizing: border-box;
+}
 
 /* Global styles */
 
 :root {
     font-size: 16px;
     height: 200%;
+    --text-color: hsl(0, 0%, 9%);
+    --background-color: hsl(0, 0%, 99%);
+    --main-accent-color: hsl(209, 100%, 45%);
+    --secondary-accent-color: hsl(210, 22%, 30%);
 }
 
 body {
+    width: 100%;
     height: 200%;
     display: grid;
    grid-template-areas: "header header header"
@@ -14,7 +22,7 @@ body {
                         "info info info"
                         "space1 projects space2"
                         "footer footer footer";
-    grid-template-rows: 4% 25% 25% 40% 6%;
+    grid-template-rows: 3% 17% 17% 30% 4.5%;
     grid-template-columns: 10% 80% 10%;
 }
 ul {
@@ -24,11 +32,12 @@ li {
     display: inline-block;
 }
 h1 {
+    color: var(--text-color);
     font-size: 6rem;
     font-family: 'Comfortaa', Arial, sans-serif;
     font-weight: 700;
 }
-h2, h3, strong, p, img, li {
+h2, h3, strong, p, img, li, em {
     font-family: 'Outfit', Helvetica, sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -44,6 +53,9 @@ strong, li {
     font-size: 1.5rem;
     font-weight: 500;
 }
+em {
+    font-size: 2rem;
+}
 img {
     width: 500%;
     height: auto;
@@ -51,9 +63,58 @@ img {
 img[alt="Toggle Dark Mode"], img[alt="Toggle Light Mode"] {
    width: 60%;
 }
+input[type="checkbox"] {
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+    left: 33.5%;
+    top: -2.5px;
+    z-index: 5;
+}
+.check {
+    position: relative;
+    top: .35rem;
+    display: inline-block;
+    width: clamp(35px, 60px, 85px);
+    height: clamp(15px, 30px, 45px);
+    background-color: hsl(202, 85%, 55%);
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.check:before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background-color: white;
+    width: 40%;
+    height: 80%;
+    border-radius: 50%;
+    transition: transform ease 0.8s;
+}
+input[type="checkbox"]:checked {
+    transform: translateX(235%)
+}
+input[type="checkbox"]:checked ~ .check:before {
+    transform: translateX(120%)
+}
+
 a {
     text-decoration: none;
+    word-wrap: unset;
+    padding: 5%;
 }
+a:hover {
+    background-color: hsl(0, 0%, 95%); 
+}
+a:active {
+    color: hsl(240, 100%, 80%);
+}
+em {
+    margin: 1% 1%;
+}
+
 /* Page Styles */
 
 header, footer, .hero, .info, .projects {
@@ -71,8 +132,60 @@ footer {
     flex-wrap: nowrap;
     grid-area: g;
 }
+li {
+    margin-top: 5%;
+    position: relative;
+}
+li:nth-child(1) {
+    left: -55%;
+}
+li:nth-child(2) {
+    left: -40%;
+}
+li:nth-child(3) {
+    left: -25%;
+}
+li:nth-child(4) {
+    left: -18%;
+    top: 5px;
+}
+li:nth-child(5) {
+    left: -25%;
+}
+button {
+    width: 105%;
+    background-color: hsl(202, 85%, 55%);
+    color: hsl(0, 0%, 95%);
+    padding: 2.5%;
+    border-radius: 3.5%;
+    transition: color .5s, background-color .5s;
+}
+button:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(202, 85%, 55%);
+}
+button:active {
+    transition: color .1s;
+    color: hsl(202, 85%, 85%);
+}
+h1 {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
 
+div > span {
+    border-radius: 50%;
+    width: 5%;
+    height: 5%;
+    background-color: white;
+    opacity: .25;
+    z-index: 6;
+}
 .hero {
+    width: 1000%;
+    height: 100%;
+    background-color: aliceblue;
     grid-area: b;
 }
 .info {
@@ -81,6 +194,28 @@ footer {
 .projects {
     grid-area: d;
 }
-
+.circles {
+    display: flex;
+    z-index: 5;
+    width: 15%;
+    height: 25%;
+    justify-content: space-around;
+    position: relative;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#arrow-left, #arrow-right {
+    position: relative;
+    width: 2.5%;
+    top: 30%;
+    opacity: .5;
+}
+#arrow-left {
+    left: 2%;
+}
+#arrow-right {
+    left: 94%;
+}
 
 /* Compatibility */
