@@ -29,11 +29,10 @@
          <ul role="presentation">
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><button>View my projects</button></li>
+            <li><button onclick="window.location.href='file:///Users/mateofain/Desktop/Mateo/portfolio_project/projects.html';">View my projects</button></li>
             <li><img src="./resources/images/dark_mode.svg" alt="Toggle Dark Mode" /><img src="./resources/images/light_mode.svg" alt="Toggle Light Mode" /></li>
             <li>
-               <input type="checkbox">
-               <span class="check"></span>
+               <span class="check" onclick="toggleMode()"></span>
             </li>
          </ul>
       </nav>
@@ -47,8 +46,8 @@
        <article class="info" id="about">
          <h2>About me</h2>
          <div class="container">
-            <img src="./resources/images/profile.jpeg" alt="My profile picture" id="profile" />
-            <h3>Freelance Frontend Developer with 4+ months of experience</h3>
+            <div role="presentation"><img src="./resources/images/profile.jpeg" alt="My profile picture" id="profile" />
+            <h3>Freelance Frontend Developer with 4+ months of experience</h3></div>
             <p>
                I started coding back when I was 13, using Youtube Python tutorials, later on I started taking online courses (mostly on Codecademy) on Front end Web Development, I
                learned to use HTML (semantic, forms, ARIA attributes), Advanced pure CSS (flexbox, grid, design theory, browser compatibility) and Javascript (loops, iterators, 
@@ -57,16 +56,16 @@
                Lorem ipsum dolor sitn amet, consectetur adipisicing elit. Assumenda perspiciatis rem rerum repellendus corrupti doloremque quas. Earum in voluptates voluptatibus! Fugit
                nisi ipsa saepe consectetur commodi qui eligendi laborum vero?.
             </p>
-            <img src="./resources/images/dropdown_arrow.svg" alt="" class="dropdown"><h4>Contact me</h4>
+            <img src="./resources/images/dropdown_arrow_light.svg" alt="" onclick="toggleDropdown(event)" id="first-drop"><h4>Contact me</h4>
             <div class="about">
                <p>I am active in social media like Twitter and I post weekly blogs on Dev.to</p>
-               <a href=""></a><img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white" alt="Check my Twitter!" class="badge" /></a>
-               <a href=""></a><img src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white" alt="View my posts on Dev.to" class="badge" /></a>
-               <a href=""></a><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="See my Linkedin profile" class="badge" /></a>
+               <a href="https://twitter.com/mateo_fain"></a><img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white" alt="Check my Twitter!" class="badge" /></a>
+               <a href="https://dev.to/chabulsqu"></a><img src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white" alt="View my posts on Dev.to" class="badge" /></a>
+               <a href="https://www.linkedin.com/in/mateo-fain-6b0006243/"></a><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="See my Linkedin profile" class="badge" /></a>
             </div>
-            <img src="./resources/images/dropdown_arrow.svg" alt="" class="dropdown"><h4>Technologies</h4>
+            <img src="./resources/images/dropdown_arrow_light.svg" alt="" onclick="toggleDropdown(event)" id="second-drop"><h4>Technologies</h4>
             <div class="about">
-               <p>I consider myself pretty fluent at these Technologies, though I'll learn any technology that my job requires to.</p>
+               <p>I consider myself pretty fluent at these Technologies, though I'll learn any skill that my job requires to.</p>
                <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="" class="badge"/>
                <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="" class="badge"/>
                <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="" class="badge"/>
@@ -76,27 +75,27 @@
       <article class="projects">
          <h2>My Projects</h2>
          <div class="image-container" role="presentation">
-            <img src="./resources/images/testimonials.png" alt="">
-            <h3>Testimonials Grid Section</h3>
-            <p>A fully responsive testimonial section for a company using CSS grid Layout</p>
-            <a href="">View code</a>
+            <div role="presentation"></div>
+            <h3 class="center">Testimonials Grid Section</h3>
+            <p class="center">A fully responsive testimonial section for a company using CSS grid Layout</p>
+            <a href="" class="center">View code</a>
          </div>
          <div class="image-container" role="presentation">
-            <img src="./resources/images/nft.png" alt="">
-            <h3>NFT Preview Card</h3>
-            <a href="">View code</a>
+            <div role="presentation"></div>
+            <h3 class="center">NFT Preview Card</h3>
+            <a href="" class="center">View code</a>
          </div>
          <div class="image-container" role="presentation">
-            <img src="./resources/images/club.png" alt="">
-            <h3>Responsive Club Website</h3>
-            <a href="">View code</a>
+            <div role="presentation"></div>
+            <h3 class="center">Responsive Club Website</h3>
+            <a href="" class="center">View code</a>
          </div>
-         <button>See more of my projects</button>
+         <button onclick="window.location.href='file:///Users/mateofain/Desktop/Mateo/portfolio_project/projects.html';">See more of my projects</button>
       </article>
    </main>
-   <footer>
+   <footer class="light">
       <p>Found a bug or issue? Report it <a href="https://github.com/Chabulsqu/portfolio_project/issues">here</a></p>
-      <p>copyright</p>
+      <p>copyright© Mateo Fain, 2022</p>
    </footer>
 </body>
 </html>
