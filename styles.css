@@ -15,7 +15,7 @@
 .dark {
     --main-text-color: hsl(225, 75%, 90%, .75);
     --main-background-color: hsl(0, 0%, 12%);
-    --secondary-background-color: hsl(0, 0%, 38%);
+    --secondary-background-color: hsl(0, 0%, 24%);
     --secondary-accent-color: hsl(0, 0%, 95%);
 }
 
@@ -29,7 +29,7 @@ body {
                         "info info info"
                         "space1 projects space2"
                         "footer footer footer";
-    grid-template-rows: 12vh 68vh 100vh 305vh 14vh;
+    grid-template-rows: 12vh 68vh 100vh 325vh 14vh;
     grid-template-columns: 10vw 80vw 10vw;
 }
 
@@ -125,7 +125,7 @@ input[type="checkbox"] {
     content: '';
     position: absolute;
     top: 10%;
-    left: 5.5%;
+    left: 7%;
     background-color: var(--main-background-color);
     width: 1.5vw;
     height: 2.8vh;
@@ -180,11 +180,6 @@ footer a {
 footer p {
     color: var(--main-background-color);
 }
-header li img:nth-child(2) {
-    display: none;
-    opacity: 0;
-    transition: opacity .5s;
-}
 li {
     margin-top: 2.5%;
     position: relative;
@@ -213,6 +208,7 @@ button {
     padding: 2.5%;
     border-radius: 3.5%;
     transition: color .5s, background-color .5s;
+    cursor: pointer;
 }
 button:hover {
     background-color: var(--main-background-color);
@@ -234,7 +230,9 @@ h1 {
     top: 15%;
     left: 10%;
 }
-
+div:nth-child(2) h3 {
+    margin-top: 7.5vh;
+}
 div > span {
     border-radius: 50%;
     width: 5%;
@@ -257,7 +255,7 @@ div > span {
     grid-area: c;
 }
 .projects {
-    margin-top: 25vh;
+    margin-top: 40vh;
     grid-area: d;
     position: relative;
     top: 5vh;
@@ -313,6 +311,10 @@ div > span {
     height: 130%;
     border-radius: 12px;
     transition: background-color .3s ease-in;
+    filter: drop-shadow(9px 9px 3px var(--secondary-background-color));
+}
+.image-container:nth-child(2) {
+   height: 140%;
 }
 .image-container:nth-child(3) {
     height: 125%;
@@ -352,6 +354,7 @@ div > span {
 }
 .about {
     display: none;
+    flex-wrap: wrap;
     width: 80%;
 }
 .about a {
@@ -359,12 +362,13 @@ div > span {
 }
 .badge {
     padding: 1%;
-    width: 20%;
-    height: auto;
+    width: 8vw;
+    height: 6vh;
     cursor: pointer;
+    margin-left: 1vw;
 }
 #first-drop, #second-drop {
-    margin-top: 4vh;
+    margin-top: 3vh;
     transition: transform .75s ease;
     cursor: pointer;
 }
@@ -383,11 +387,11 @@ div > span {
 
  @media only screen and (max-width: 1440px) and (min-width: 1025px) {
     body {
-        grid-template-rows: 12vh 68vh 120vh 305vh 14vh;
+        grid-template-rows: 12vh 68vh 125vh 335vh 15vh;
     }
     .projects {
         position: relative;
-        top: 20vh;
+        top: 30vh;
     }
     .container {
         width: 700%;
@@ -405,12 +409,32 @@ div > span {
     }
  } 
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
- 
+   :root {
+      font-size: 14px;
+   }
+    body {
+        grid-template-rows: 12vh 70vh 210vh 310vh 15vh;
+    }
+    .projects {
+        margin-top: 120vh;
+    }
+    .check {
+        width: 6vw;
+        height: 3vw;
+    }   
+    .check:before {
+        margin-top: .25vh;
+        width: 2.25vw;
+        height: 3.5vh;
+    }
+    #first-drop, #second-drop {
+      margin-left: 25%;
+  }
  } /*
-@media only and (max-width: 768px) and (min-width: 426px) {
+@media only and (max-width: 768px) and (min-width: 481px) {
 
  } 
- @media only and (max-width: 425px) and (min-width: 320px) {
+ @media only and (max-width: 480px) and (min-width: 320px) {
 
 }  */
 
@@ -421,4 +445,4 @@ div > span {
     a[href^="http"]:after {
       content: " (" attr(href) ")";
     }
-  }
+ }
