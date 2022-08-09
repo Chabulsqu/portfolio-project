@@ -4,7 +4,9 @@ let dropdowns = document.getElementsByClassName('about');
 let firstDrop = document.getElementById('first-drop');
 let secondDrop = document.getElementById('second-drop');
 let imageContainers = document.getElementsByClassName('image-container');
-let w = document.documentElement.clientWidth;
+let w = window.innerWidth;
+let menu = document.querySelector('img');
+
 
 if (document.querySelector('body').className == 'dark') {
     firstDrop.style.filter = 'invert(100%) sepia(0%) saturate(7500%) hue-rotate(214deg) brightness(116%) contrast(108%)';
@@ -26,8 +28,11 @@ if (document.querySelector('body').className == 'dark') {
     }
 }
 
+document.querySelector('h1').style.opacity = '1';
+document.querySelector('h1').style.top = '12%';
+
 const toggleMode = () => {
-    if (document.querySelector('body').className == 'dark') {
+    if (document.body.className == 'dark') {
         document.body.classList.replace('dark', 'light');
         firstDrop.style.filter = '';
         secondDrop.style.filter = '';
@@ -68,3 +73,52 @@ const toggleDropdown = event => {
         event.target.id == 'first-drop' ? dropdowns[0].style.display = 'flex' : dropdowns[1].style.display = 'flex';
     }
 }
+
+const openMenu = () => {
+    document.querySelector('ul').style.transform = 'translateX(-70.75vw)';
+    document.querySelector('#close').style.display = 'inline-block';
+    document.getElementsByClassName('mobile')[1].style.display = 'none';
+    document.querySelector('h1').style.visibility = 'hidden';
+}
+const closeMenu = () => {
+    document.querySelector('ul').style.transform = 'translateX(30vw)';
+    document.querySelector('#close').style.display = 'none';
+    document.getElementsByClassName('mobile')[1].style.display = 'block';
+    document.querySelector('h1').style.visibility = 'visible';
+}
+
+function preventKeyBoardScroll(e){
+  e.preventDefault();
+  e.stopPropagation();
+
+  return false;
+}
+function preventScroll(e){
+  e.preventDefault();
+  e.stopPropagation();
+
+  return false;
+}
+
+function disable(){
+  document.body.addEventListener('touchmove', preventKeyBoardScroll, {passive:false});
+  document.body.addEventListener('wheel', preventScroll, {passive:false});
+}
+
+function enable(){
+  document.body.removeEventListener('touchmove', preventKeyBoardScroll);
+  document.body.removeEventListener('wheel', preventScroll);
+}
+
+
+document.getElementsByClassName('mobile')[1].addEventListener('click', openMenu);
+document.querySelector('#close').addEventListener('click', closeMenu);
+document.getElementsByClassName('mobile')[1].addEventListener('click', disable, {passive:false});
+document.querySelector('#close').addEventListener('click', enable, {passive:false});
+document.body.addEventListener('resize', () => {
+  if (w > 768) {
+    document.querySelector('#close').style.display = 'none';
+    document.getElementsByClassName('mobile')[1].style.display = 'none';
+  }
+})
+

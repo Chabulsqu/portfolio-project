@@ -1,52 +1,74 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mateo Fain | Frontend Developer</title>
+    <link href="./reset.css" type="text/css" rel="stylesheet">
+    <link href="./styles.css" type="text/css" rel="stylesheet">
+    <link href="./projects.css" type="text/css" rel="stylesheet">
+    <style>
+        @font-face {
+           font-family: 'Comfortaa';
+           src: url(./resources/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf);
+        }
+        @font-face {
+           font-family: 'Outfit';
+           src: url(./resources/fonts/Outfit/Outfit-VariableFont_wght.ttf);
+        }
+     </style>
+     <script src="./resources/projects.js" defer></script>
 </head>
 <body class="light">
     <header>
-        <em>Mateo Fain</em>
+        <em>Mateo_Fain</em>
+        <em class="mobile" aria-hidden="true">M_F</em>
+        <img class="mobile" src="./resources/images/menu.svg" alt="Open Menu" />
+        <img class="mobile" id="close" src="./resources/images/close.svg" alt="Close Menu" />
         <nav>
            <ul role="presentation">
-              <li><button><a href="./proyectos.html" role="presentation">Go back home</a></button></li>
-              <li><img src="./resources/images/" alt="Change light/dark mode" /></li>
-              <li><button class="slide"></button></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><button onclick="window.location.href='file:///Users/mateofain/Desktop/Mateo/portfolio_project/index.html';">Return to main page</button></li>
+              <li><img src="" alt="Toggle Dark/Light Mode" id="mode-toggle" /></li>
+              <li class="check" onclick="toggleMode()">
+              </li>
            </ul>
         </nav>
     </header>
     <main>
+        <h2 class="center">My projects</h2>
         <div class="image-container" role="presentation">
-            <img src="./resources/images/testimonials.png" alt="">
+            <div role="presentation"></div>
             <h3>Testimonials Grid Section</h3>
             <p>A fully responsive testimonial section for a company using CSS grid Layout. <a href="">View code</a></p>
         </div>
         <div class="image-container" role="presentation">
-            <img src="./resources/images/nft.png" alt="">
+            <div role="presentation"></div>
             <h3>NFT Preview Card</h3>
             <p>A responsive NFT preview card using CSS flexbox, variables and hover states. <a href="">View code</a></p>
         </div>
         <div class="image-container" role="presentation">
-            <img src="./resources/images/sports.png" alt="">
+            <div role="presentation"></div>
             <h3>Responsive Club Website</h3>
             <p>A Responsive sports club website using CSS grid, relative units and Media queries. <a href="">View code</a></p>
         </div>
         <div class="image-container" role="presentation">
-            <img src="./resources/images/checker.png" alt="">
+            <div role="presentation"></div>
             <h3>Credit Card Checker</h3>
-            <p>A credit card checker algorithm that can check for valid cards and identify the fake ones and its companies using Javascript. <a href="">View code</a></p>
+            <p class="credit">A credit card checker algorithm that can check for valid cards and identify the fake ones and its companies using Javascript. <a href="" class="credit">View code</a></p>
         </div>
         <div class="image-container" role="presentation">
-            <img src="./resources/images/lodash.png" alt="">
+            <div role="presentation"></div>
             <h3>Lodash recreation</h3>
             <p>A recreation of the main functions of the Lodash library like .clamp(), .drop(), etc. <a href="">View code</a></p>
         </div>
         <div class="image-container" role="presentation">
-            <img src="./resources/images/paparolio.png" alt="">
+            <div role="presentation"></div>
             <h3>Paparolio Pizza</h3>
-            <p>A responsive Pizza website using CSS flexbox. <a href="">View code</a></p>
+            <p class="pizza">A responsive Pizza website using CSS flexbox. <a href="" class="pizza">View code</a></p>
         </div>
     </main>
     <footer>

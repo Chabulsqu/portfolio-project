@@ -1,3 +1,9 @@
 .check:before {
     transform: translateX(116%)
 }
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .check:before {
+        transform: translateX(77.5%);
+    }
+ }

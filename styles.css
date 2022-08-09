@@ -3,14 +3,14 @@
 
 :root {
     font-size: 16px;
-    --main-accent-color: hsl(209, 100%, 52%);
+    --main-accent-color: hsl(209, 100%, 50%);
 }
 
 .light {
     --main-text-color: hsl(0, 0%, 9%);
     --main-background-color: hsl(0, 0%, 99%);
     --secondary-background-color: hsl(0, 0%, 92%);
-    --secondary-accent-color: hsl(258, 100%, 50%);
+    --secondary-accent-color: hsl(208, 60%, 58%);
 }
 .dark {
     --main-text-color: hsl(225, 75%, 90%, .75);
@@ -21,21 +21,8 @@
 
 body {
     background-color: var(--main-background-color);
-    width: 100%;
-    height: 250%;
-    display: grid;
-   grid-template-areas: "header header header"
-                        "hero hero hero" 
-                        "info info info"
-                        "space1 projects space2"
-                        "footer footer footer";
-    grid-template-rows: 12vh 68vh 100vh 325vh 14vh;
-    grid-template-columns: 10vw 80vw 10vw;
 }
 
-ul {
-    list-style: none;
-}
 li {
     display: inline-block;
 }
@@ -44,7 +31,13 @@ h1 {
     font-size: 6rem;
     font-family: 'Comfortaa', Arial, sans-serif;
     font-weight: 700;
+    position: relative;
+    top: 3%;
+    left: 3%;
+    opacity: .5;
+    transition: opacity .8s ease-out, top .8s ease-out;
 }
+
 h2, h3, h4, strong, p, img, li, em, button, a {
     color: var(--main-text-color);
     line-height: 1.75;
@@ -52,12 +45,36 @@ h2, h3, h4, strong, p, img, li, em, button, a {
     font-size: 1rem;
     font-weight: 400;
 }
+h2, h3, h4 {
+    color: var(--secondary-accent-color);
+}
+a, button {
+    font-size: 1.4rem;
+}
+
+a {
+    color: var(--main-accent-color);
+    text-decoration: none;
+    padding: 5%;
+    transition: color ease .5s, font-weight ease .5s;
+    
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: hsl(271, 100%, 100%);
+}
+a:visited:active {
+    transition: color ease .75s;
+    color: var(--secondary-accent-color);
+}
+
 h2 {
     width: 100%;
     font-size: 4rem;
     font-weight: 500;
 }
-
 .info h2 {
     width: 200%;
     margin-top: 10%;
@@ -71,18 +88,14 @@ h3 {
     position: relative;
     transform: translate(2%, -40%);
 }
+
 h4 {
     margin-top: 4vh;
     margin-right: 15vw;
     font-size: 1.5rem;
     display: inline-block;
 }
-h2, h3, h4 {
-    color: var(--secondary-accent-color);
-}
-a, button {
-    font-size: 1.4rem;
-}
+
 p {
     font-size: 1.25rem;
     font-weight: 500;
@@ -90,13 +103,44 @@ p {
 em {
     color: var(--main-text-color);
     font-size: 2rem;
+    margin: 1%;
 }
+
 img {
     width: 500%;
     height: auto;
 }
 li img {
    width: 60%;
+}
+img[src="./resources/images/close.svg"]:hover {
+    background-color: var(--secondary-background-color);
+}
+
+button {
+    --main-text-color: hsl(0, 0%, 99%);
+    width: 105%;
+    padding: 2.5%;
+    border-radius: 3.5%;
+    background-color: var(--main-accent-color);
+    color: var(--main-background-color);
+    transition: color .5s, background-color .5s;
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--main-background-color);
+    color: var(--main-accent-color);
+}
+button:active {
+    transition: color .1s;
+    color: hsl(202, 85%, 85%);
+}
+button:nth-child(5) {
+    margin-top: 5vh;
+    height: 4rem;
+    width: 16rem;
+    padding: 0;
+    border-radius: 3%;
 }
 
 input[type="checkbox"] {
@@ -120,6 +164,8 @@ input[type="checkbox"] {
     cursor: pointer;
     overflow: hidden;
     border-radius: 20px;
+    margin-top: 1vh;
+    margin-left: .75vw;
 }
 .check:before {
     content: '';
@@ -133,33 +179,26 @@ input[type="checkbox"] {
     transition: transform ease 0.8s;
 }
 
-a {
-    color: var(--main-accent-color);
-    text-decoration: none;
-    padding: 5%;
-    transition: color ease .5s, font-weight ease .5s;
-}
-header a:hover, .projects a:hover {
-    font-weight: 1000;
-    text-decoration: underline;
-}
-a:active {
-    color: hsl(271, 100%, 100%);
-}
-a:visited:active {
-    transition: color ease .75s;
-    color: var(--secondary-accent-color);
-}
-em {
-    margin: 1% 1%;
-}
+header, footer, .hero, .info, .projects {
+    width: 100%;
+    height: 100%;
+ }
+
 
 /* Page Styles */
 
-header, footer, .hero, .info, .projects {
-   width: 100%;
-   height: 100%;
+
+body {
+    display: grid;
+    grid-template-areas: "header header header"
+                     "hero hero hero" 
+                     "info info info"
+                     "space1 projects space2"
+                     "footer footer footer";
+    grid-template-rows: 12vh 68vh 100vh 325vh 14vh;
+    grid-template-columns: 10vw 80vw 10vw;
 }
+
 header {
     background-color: var(--main-background-color);
     grid-area: header;
@@ -167,6 +206,7 @@ header {
     flex-wrap: nowrap;
     justify-content: space-between;
 }
+
 footer {
     margin-top: 2.5%;
     padding: .5%;
@@ -174,12 +214,14 @@ footer {
     background-color: var(--main-accent-color);
 }
 footer a {
-    color: var(--secondary-accent-color);
+    color: hsl(208, 86%, 12%);
+    text-decoration: underline;
     padding: 0;
 }
 footer p {
     color: var(--main-background-color);
 }
+
 li {
     margin-top: 2.5%;
     position: relative;
@@ -200,36 +242,7 @@ li:nth-child(4) {
 li:nth-child(5) {
     left: -25%;
 }
-button {
-    --main-text-color: hsl(0, 0%, 99%);
-    width: 105%;
-    background-color: var(--main-accent-color);
-    color: var(--main-background-color);
-    padding: 2.5%;
-    border-radius: 3.5%;
-    transition: color .5s, background-color .5s;
-    cursor: pointer;
-}
-button:hover {
-    background-color: var(--main-background-color);
-    color: var(--main-accent-color);
-}
-button:active {
-    transition: color .1s;
-    color: hsl(202, 85%, 85%);
-}
-button:nth-child(5) {
-    margin-top: 5vh;
-    height: 4rem;
-    width: 16rem;
-    padding: 0;
-    border-radius: 3%;
-}
-h1 {
-    position: absolute;
-    top: 15%;
-    left: 10%;
-}
+
 div:nth-child(2) h3 {
     margin-top: 7.5vh;
 }
@@ -250,6 +263,7 @@ div > span {
     height: 100%;
     background-color: aliceblue;
     grid-area: b;
+    z-index: 0;
 }
 .info {
     grid-area: c;
@@ -273,18 +287,7 @@ div > span {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-#arrow-left, #arrow-right {
-    position: relative;
-    width: 2.5%;
-    top: 30%;
-    opacity: .5;
-}
-#arrow-left {
-    left: 2%;
-}
-#arrow-right {
-    left: 94%;
-}
+
 .container {
     padding: 1.5vw;
     position: relative;
@@ -343,6 +346,7 @@ div > span {
     background-image: url('./resources/images/club.png');
     background-position: 0% 0%;
 }
+
 .projects a {
     position: relative;
     top: 2.5vh;
@@ -352,6 +356,7 @@ div > span {
 .projects img {
     width: 60vw;
 }
+
 .about {
     display: none;
     flex-wrap: wrap;
@@ -360,6 +365,7 @@ div > span {
 .about a {
     padding: 0;
 }
+
 .badge {
     padding: 1%;
     width: 8vw;
@@ -367,76 +373,22 @@ div > span {
     cursor: pointer;
     margin-left: 1vw;
 }
+.mobile {
+    display: none;
+}
+
 #first-drop, #second-drop {
     margin-top: 3vh;
     transition: transform .75s ease;
     cursor: pointer;
 }
-
 #first-drop, #second-drop, #profile {
-    display: inline-block;
     width: 5vh;
 }
-
 #profile {
     width: 10vh;
     border-radius: 50%;
 }
-
-/* Compatibility */
-
- @media only screen and (max-width: 1440px) and (min-width: 1025px) {
-    body {
-        grid-template-rows: 12vh 68vh 125vh 335vh 15vh;
-    }
-    .projects {
-        position: relative;
-        top: 30vh;
-    }
-    .container {
-        width: 700%;
-        top: 1.5vh;
-        left: 21vw;
-    }
-    .check {
-        width: 4.5vw;
-    }
-    .check:before {
-        width: 2vw;
-    }
-    input[type="checkbox"]:checked ~ .check:before {
-        transform: translateX(100%);
-    }
- } 
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
-   :root {
-      font-size: 14px;
-   }
-    body {
-        grid-template-rows: 12vh 70vh 210vh 310vh 15vh;
-    }
-    .projects {
-        margin-top: 120vh;
-    }
-    .check {
-        width: 6vw;
-        height: 3vw;
-    }   
-    .check:before {
-        margin-top: .25vh;
-        width: 2.25vw;
-        height: 3.5vh;
-    }
-    #first-drop, #second-drop {
-      margin-left: 25%;
-  }
- } /*
-@media only and (max-width: 768px) and (min-width: 481px) {
-
- } 
- @media only and (max-width: 480px) and (min-width: 320px) {
-
-}  */
 
 @media print {
     nav {

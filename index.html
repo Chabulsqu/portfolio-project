@@ -8,6 +8,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="./reset.css" type="text/css" rel="stylesheet">
    <link href="./styles.css" type="text/css" rel="stylesheet">
+   <link href="./index.css" type="text/css" rel="stylesheet">
    <title>Mateo Fain | Frontend Portfolio</title>
    <style>
       @font-face {
@@ -24,14 +25,15 @@
 <body class="light">
    <header>
       <em>Mateo_Fain</em>
+      <em class="mobile" aria-hidden="true">M_F</em>
+      <img class="mobile" src="./resources/images/menu.svg" alt="Open Menu" /><img class="mobile" id="close" src="./resources/images/close.svg" alt="Close Menu" />
       <nav>
          <ul role="presentation">
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><button onclick="window.location.href='file:///Users/mateofain/Desktop/Mateo/portfolio_project/projects.html';">View my projects</button></li>
-            <li><img src="" alt="" id="mode-toggle" /></li>
-            <li>
-               <span class="check" onclick="toggleMode()"></span>
+            <li><img src="" alt="Toggle Dark/Light Mode" id="mode-toggle" /></li>
+            <li class="check" onclick="toggleMode()">
             </li>
          </ul>
       </nav>
@@ -39,8 +41,7 @@
    <main>
       <section class="hero" id="banner">
          <h1>Welcome to my Portfolio</h1>
-         <!-- <img src="./resources/images/left_arrow.svg" id="arrow-left" aria-label="Change background gradient"></img>
-         <img src="./resources/images/right_arrow.svg" id="arrow-right" aria-hidden="true"></img> -->
+         <video src="./resources/images/video.mp4"></video>
       </section>
        <article class="info" id="about">
          <h2>About me</h2>

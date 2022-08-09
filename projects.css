@@ -1,0 +1,73 @@
+body {
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-template-rows: 12vh 690vh 14vh;
+    grid-template-areas: "header header header"
+                         "none1 main none2"
+                         "footer footer footer";
+}
+
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+footer {
+    grid-area: footer;
+}
+h2 {
+    z-index: 100;
+    margin-top: 10%;
+    margin-left: 25%;
+    width: 30vw;
+    height: 10vw;
+}
+
+h3 {
+    position: relative;
+    left: 25%;
+}
+h3:nth-child(2) {
+    left: 35%;
+}
+h3:nth-child(3) {
+    left: -20%;
+}
+
+main p {
+    position: relative;
+    left: 25%;
+}
+
+main a {
+    position: relative;
+    top: 10vh;
+    left: -45%;
+}
+
+.image-container {
+    height: 100vh !important;
+}
+.image-container:nth-child(5) div {
+    background-image: url('./resources/images/credit.png');
+}
+.image-container:nth-child(6) div {
+    background-image: url('./resources/images/lodash.png');
+}
+.image-container:nth-child(7) div {
+    background-image: url('./resources/images/pizza.png');
+}
+
+.credit {
+    position: static;
+}
+a.credit {
+    margin-left: 40%;
+}
+
+p.pizza {
+    margin-left: 13.5%;
+}
+a.pizza {
+    margin-left: 17%;
+}
