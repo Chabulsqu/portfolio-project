@@ -19,6 +19,10 @@
     --secondary-accent-color: hsl(0, 0%, 95%);
 }
 
+.check.dark::before {
+    transform: translateX(130%);
+}
+
 body {
     background-color: var(--main-background-color);
 }
@@ -176,7 +180,7 @@ input[type="checkbox"] {
     width: 1.5vw;
     height: 2.8vh;
     border-radius: 50%;
-    transition: transform ease 0.8s;
+    transition: transform ease 0.75s;
 }
 
 header, footer, .hero, .info, .projects {
@@ -389,6 +393,256 @@ div > span {
     width: 10vh;
     border-radius: 50%;
 }
+
+@media only screen and (max-width: 1440px) and (min-width: 1025px) {
+    body {
+        grid-template-rows: 12vh 68vh 125vh 335vh 15vh;
+    }
+    .projects {
+        position: relative;
+        top: 30vh;
+    }
+    .container {
+        width: 700%;
+        top: 1.5vh;
+        left: 21vw;
+    }
+    .check {
+        width: 4.5vw;
+    }
+    .check:before {
+        width: 2vw;
+    }
+ } 
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+   :root {
+      font-size: 14px;
+   }
+    body {
+        grid-template-rows: 12vh 70vh 210vh 310vh 15vh;
+    }
+    .projects {
+        margin-top: 120vh;
+    }
+    .check {
+        width: 6vw;
+        height: 3vw;
+    }   
+    .check:before {
+        width: 2.5vw;
+        height: 3.75vh;
+        top: 12%;
+        left: 5%;
+    }
+    #first-drop, #second-drop {
+      margin-left: 25%;
+  }
+ } 
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+    body {
+        grid-template-columns: 100vw;
+        grid-template-rows: 12vh 70vh 210vh 240vh 15vh;
+        grid-template-areas: "header"
+                             "hero" 
+                             "info"
+                             "projects"
+                             "footer";
+    }
+    header, footer, .hero, .projects, .info {
+        width: 100%;
+    }
+    .hero {
+        background: linear-gradient(45deg, hsl(356, 90%, 59%), hsl(248, 44%, 39%));
+    }
+    .projects {
+        margin-left: -15vw;
+        margin-top: 50vh;
+    }
+    button {
+        color: var(--main-accent-color);
+        background-color: transparent;
+        border-radius: 0;
+    }
+    ul {
+        transform: translateX(30vw);
+        flex-wrap: wrap;
+        position: relative;
+        top: 0;
+        left: -25%;
+        width: 100%;
+        height: 80.5vh;
+        padding: 5%;
+        opacity: 1;
+        background-color: hsla(0, 100%, 100%, 0.1);
+        z-index: 200;
+        transition: transform .75s;
+    }
+    li {
+        line-height: 3.8;
+    }
+    li:nth-child(1) {
+        margin-top: 12vh;
+        margin-left: 15vw;
+    }
+    li:nth-child(2) {
+        margin-left: 11.5vw;
+    }
+    li:nth-child(3) {
+        margin-left: 5vw;
+    }
+    li:nth-child(4) {
+        margin-left: 5vw;
+    }
+
+    .check {
+        width: 7vw;
+        height: 4vh;
+    }
+    .check::before {
+        top: 14%;
+        width: 40%;
+        height: 70%;
+    }
+
+    img.mobile {
+        display: inline-block;
+        transform: scale(.6, .6);
+        position: relative;
+        top: -1vh;
+        left: 37.5vw;
+        cursor: pointer;
+    }
+    img#close {
+        display: none;
+        z-index: 120;
+        transform: scale(.5, .5);
+    }
+    .container {
+        margin-top: -10vh;
+        margin-left: -25vw;
+        width: 90%;
+    }
+ } 
+ @media only screen and (max-width: 480px) and (min-width: 320px) {
+    :root {
+        font-size: 13px;
+    }
+    body {
+        grid-template-columns: 100vw;
+        grid-template-rows: 12vh 120vh 240vh 210vh;
+        grid-template-areas: "header"
+                             "hero" 
+                             "info"
+                             "projects";
+    }
+    footer {
+        display: none;
+    }
+
+    em {
+        display: none;
+    }
+    em.mobile {
+        display: inline-block;
+        margin: 1rem;
+    }
+
+    button {
+        color: var(--main-accent-color);
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    li {
+        line-height: 3.8;
+    }
+    li:nth-child(1) {
+        margin-top: 15vh;
+        margin-left: 60vw;
+    }
+    li:nth-child(2) {
+        margin-left: 45vw;
+    }
+    li:nth-child(3) {
+        margin-left: 30vw;
+    }
+    li:nth-child(4) {
+        margin-left: 25vw;
+    }
+    li:nth-child(5) {
+        margin-left: 7.5vw;
+    }
+
+    
+    ul {
+        background-color: hsla(0, 100%, 100%, 0.25);
+        width: 100vw;
+        height: 100vh;
+        transform: translateX(30vw);
+        transition: transform .75s;
+    }
+
+    img.mobile {
+        display: inline-block;
+        transform: scale(.6, .6);
+        margin-left: 25vw;
+    }
+    img#close {
+        transform: scale(.6, .6) translateX(30vw);
+        display: none;
+        z-index: 10;
+    }
+
+    .hero {
+        background: linear-gradient(45deg, hsl(356, 90%, 59%), hsl(248, 44%, 39%));
+    }
+
+    header, footer, .hero, .projects, .info {
+        width: 100%;
+    }
+
+    .container {
+        margin-top: -10vh;
+        margin-left: -25vw;
+        width: 90%;
+    }
+    .projects {
+        margin-left: -15vw;
+    }
+    .badge {
+        width: 20vw;
+        height: 15vw;
+    }
+    .check {
+        width: 15vw;
+        height: 3.5vh;
+    }
+    .check:before {
+        width: 50%;
+        height: 80%;
+    }
+
+    .image-container:nth-child(2) {
+        height: 80%;
+    }
+     .image-container:nth-child(3) {
+         height: 70%;
+    }
+     .image-container:nth-child(4) {
+         height: 70%;
+    }
+
+     .projects button {
+        margin-bottom: 5%;
+    }
+
+}  
+
+@supports (backdrop-filter: blur(1rem)) {
+    ul {
+        backdrop-filter: blur(50px);
+    }
+ } 
 
 @media print {
     nav {

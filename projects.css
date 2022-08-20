@@ -6,6 +6,7 @@ body {
                          "footer footer footer";
 }
 
+
 header {
     grid-area: header;
 }
@@ -17,12 +18,10 @@ footer {
 }
 h2 {
     z-index: 100;
-    margin-top: 10%;
-    margin-left: 25%;
+    margin: 0 auto;
     width: 30vw;
     height: 10vw;
 }
-
 h3 {
     position: relative;
     left: 25%;
@@ -32,6 +31,19 @@ h3:nth-child(2) {
 }
 h3:nth-child(3) {
     left: -20%;
+}
+
+li:nth-child(1) {
+    transform: translate(25%, 10%)
+}
+li:nth-child(2) {
+    transform: translate(15%, 5%);
+}
+li:nth-child(3) {
+    transform: translateX(35%); 
+}
+li:nth-child(4) {
+    transform: translateX(-35%); 
 }
 
 main p {
@@ -44,6 +56,8 @@ main a {
     top: 10vh;
     left: -45%;
 }
+
+
 
 .image-container {
     height: 100vh !important;
@@ -71,3 +85,196 @@ p.pizza {
 a.pizza {
     margin-left: 17%;
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    h2 {
+        margin-bottom: 20vh;
+    }
+    .image-container:nth-child(4) {
+        height: 120%;
+    }
+
+    p.testimonial, p.nft, p.club, p.lodash {
+        margin-left: -12.5vw;
+    }
+    p.credit {
+        margin-left: 5vw;
+        width: 90%;
+    }
+
+    h3.testimonial {
+        margin-left: -7.5vw;
+    }
+    h3.nft {
+        margin-left: -2.5vw;
+    }
+    h3.club {
+        margin-left: -7.5vw;
+    }
+    h3.credit {
+        margin-left: 17.5vw;
+    }
+    h3.lodash {
+        margin-left: -3vw;
+    }
+    h3.pizza {
+        margin-left: 0vw;
+    }
+
+    p.testimonial a {
+        margin-left: -2vw;
+    }
+    p.nft a {
+        margin-left: -3vw;
+    }
+    p.club a, p.lodash a {
+        margin-left: -5vw;
+    }
+    p.pizza a {
+        margin: 0 auto;
+    }
+    
+ }
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    footer {
+        display:  none;
+    }
+    body {
+        grid-template-columns:  100vw;
+        grid-template-rows: 12vh 600vh;
+        grid-template-areas: "header"
+                             "main";
+    }
+    footer {
+        display: none;
+    }
+
+    h2 {
+        margin-bottom: 25vh;
+    }
+    ul {
+        flex-wrap: wrap;
+        position: relative;
+        top: 0;
+        left: 9%;
+        width: 100%;
+        height: 110vh;
+        padding: 5%;
+        opacity: 1;
+        background-color: hsla(0, 100%, 100%, 0.1);
+        z-index: 10;
+        transition: transform .75s;
+    }
+
+    .image-container {
+        margin-top: 10vh;
+        margin-left: 10vw;
+    }
+    .image-container p {
+        width: 100%;
+    }
+
+    p.testimonial {
+        margin-left: -17.5vw;
+    }
+    p.nft {
+        margin-left: -17.5vw;
+    }
+    p.club {
+        margin-left: -17.5vw;
+    }
+    p.lodash {
+        margin-left: -20vw;
+    }
+    p.pizza {
+        margin-left: -5vw;
+    }
+
+    h3.testimonial {
+        margin-left: -17.5vw;
+    }
+    h3.nft {
+        margin-left: -12vw;
+    }
+    h3.club {
+        margin-left: -15vw;
+    }
+    h3.credit {
+        margin-left: 17.5vw;
+    }
+    h3.lodash {
+        margin-left: -7.5vw;
+    }
+    h3.pizza {
+        margin-left: -5vw;
+    }
+
+    p.testimonial a {
+        margin-left: 50vw;
+    }
+    p.nft a {
+        margin-left: 50.9vw;
+    }
+    p.club a {
+        margin-left: 41vw;
+    }
+    p.credit a {
+        margin-left: 55vw;
+    }
+    p.lodash a {
+        margin-left: 45vw;
+    }
+    p.pizza a {
+        margin-left: -2.5vw;
+    }
+ }
+
+ @media only screen and (min-width: 320px) and (max-width: 480px) {
+    footer {
+        display: none;
+    }
+    h2 {
+        margin-bottom: 20vh;
+    }
+    body {
+        grid-template-columns: 5vw 90vw 5vw;
+        grid-template-rows: 12vh 600vh;
+        grid-template-areas: "header header header"
+                             "none1 main none2";
+    }
+    .image-container div {
+        margin-top: 12vh;
+        filter: grayscale(0.5)
+    }
+    .image-container {
+        width: 100%;
+        height: 100%;
+    }
+    .image-container p {
+        display: none;
+    }
+    .image-container p a {
+        display: block;
+    }
+    .image-container h3 {
+        width: 100%;
+    }
+    
+    h3.testimonial {
+        margin-left: -10vw;
+    }
+    h3.nft, h3.pizza {
+        margin-left: -15vw;
+    }
+    h3.club {
+        margin-left: -30vw;
+    }
+    h3.credit {
+        margin-left: 7.5vw;
+    }
+    h3.lodash {
+        margin-left: -17.5vw;
+    }
+ }
+ 
