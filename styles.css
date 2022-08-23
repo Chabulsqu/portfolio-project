@@ -25,6 +25,7 @@
 
 body {
     background-color: var(--main-background-color);
+    overflow-x: hidden;
 }
 
 li {
@@ -247,9 +248,7 @@ li:nth-child(5) {
     left: -25%;
 }
 
-div:nth-child(2) h3 {
-    margin-top: 7.5vh;
-}
+
 div > span {
     border-radius: 50%;
     width: 5%;
@@ -313,12 +312,18 @@ div > span {
 .image-container {
     box-sizing: border-box;
     padding: 2%;
-    margin-top: 7.5vh;
     width: 85%;
     height: 130%;
     border-radius: 12px;
     transition: background-color .3s ease-in;
     filter: drop-shadow(9px 9px 3px var(--secondary-background-color));
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.image-container a {
+    display: block;
 }
 .image-container:nth-child(2) {
    height: 140%;
@@ -329,12 +334,7 @@ div > span {
 .image-container:nth-child(4) {
     height: 125%;
 }
-.image-container h3, .image-container p {
-    margin-left: 2vw;
-}
-.image-container a {
-    margin-left: 11%;
-}
+
 .image-container div {
     width: 100%;
     height: 65vh;
@@ -352,9 +352,6 @@ div > span {
 }
 
 .projects a {
-    position: relative;
-    top: 2.5vh;
-    left: 18vw;
     padding: .5%;
 }
 .projects img {
@@ -419,14 +416,14 @@ div > span {
       font-size: 14px;
    }
     body {
-        grid-template-rows: 12vh 70vh 210vh 310vh 15vh;
+        grid-template-rows: 12vh 70vh 210vh 320vh 15vh;
     }
     .projects {
         margin-top: 120vh;
     }
     .check {
         width: 6vw;
-        height: 3vw;
+        height: 3.5vw;
     }   
     .check:before {
         width: 2.5vw;
@@ -464,7 +461,6 @@ div > span {
         border-radius: 0;
     }
     ul {
-        transform: translateX(30vw);
         flex-wrap: wrap;
         position: relative;
         top: 0;
@@ -652,3 +648,4 @@ div > span {
       content: " (" attr(href) ")";
     }
  }
+ 

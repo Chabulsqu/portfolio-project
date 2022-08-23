@@ -6,18 +6,24 @@ let secondDrop = document.getElementById('second-drop');
 let imageContainers = document.getElementsByClassName('image-container');
 let w = window.innerWidth;
 let menu = document.querySelector('img');
-link = document.createElement('link');
 
-
+try {
 document.querySelector('h1').style.opacity = '1';
 document.querySelector('h1').style.top = '12%';
+} catch {
+
+}
 
 const toggleMode = () => {
     if (document.body.className == 'dark') {
       document.body.classList.replace('dark', 'light');
       localStorage.removeItem('dark-mode');
+      try {
       firstDrop.style.filter = '';
       secondDrop.style.filter = '';
+      } catch {
+
+      }
       icon.src = './resources/images/dark-mode.svg';
       icon.alt = 'Toggle Dark mode';
       icon.style.filter = 'none';
@@ -25,25 +31,32 @@ const toggleMode = () => {
         box.style.backgroundColor = '';
         box.style.filter = 'drop-shadow(9px 9px 3px var(--secondary-background-color))';
        }
-       if (link.href === './styles2.css') {
-          document.head.removeChild(link);
-       }
+      try {
+        document.head.removeChild(link);
+      } catch(e) {
+
+      }
     } else {
       document.body.classList.replace('light', 'dark');
       localStorage.setItem('dark-mode', 'enabled');
+      link = document.createElement('link');
+      document.head.appendChild(link);
+      link.href = './resources/zbeforepseudoclass.css';
+      link.type = 'text/css';
+      link.rel = 'stylesheet';
       icon.src = './resources/images/light-mode.svg';
       icon.alt = 'Toggle Light mode';
       icon.style.filter = 'invert(100%) sepia(0%) saturate(7500%) hue-rotate(214deg) brightness(116%) contrast(108%)';
+      try {
       firstDrop.style.filter = 'invert(100%) sepia(0%) saturate(7500%) hue-rotate(214deg) brightness(116%) contrast(108%)';
       secondDrop.style.filter = 'invert(100%) sepia(0%) saturate(7500%) hue-rotate(214deg) brightness(116%) contrast(108%)';
+      } catch {
+
+      }
       for (let box of imageContainers) {
         box.style.backgroundColor = 'var(--secondary-background-color)';
         box.style.filter = 'none';
        }
-       document.head.appendChild(link);
-       link.href = './styles2.css';
-       link.type = 'text/css';
-       link.rel = 'stylesheet';
     }
 };
 
@@ -66,17 +79,19 @@ const toggleDropdown = event => {
 }
 
 const openMenu = () => {
-    document.querySelector('ul').style.transform = 'translateX(-70.75vw)';
+    document.querySelector('ul').style.transform = 'translateX(-31.5vw)';
     document.querySelector('#close').style.display = 'inline-block';
     document.getElementsByClassName('mobile')[1].style.display = 'none';
     document.getElementsByTagName('div')[3].style.visibility = 'hidden';
+    imageContainers[0].style.visibility = 'hidden';
     document.querySelector('h1').style.visibility = 'hidden';
 }
 const closeMenu = () => {
-    document.querySelector('ul').style.transform = 'translateX(30vw)';
+    document.querySelector('ul').style.transform = 'translateX(31.5vw)';
     document.querySelector('#close').style.display = 'none';
     document.getElementsByClassName('mobile')[1].style.display = 'block';
     document.getElementsByTagName('div')[3].style.visibility = 'visible';
+    imageContainers[0].style.visibility = 'visible';
     document.querySelector('h1').style.visibility = 'visible';
 }
 
