@@ -109,6 +109,9 @@ div > span {
     flex-wrap: wrap;
     justify-content: center;
     transition: background-color .3s ease-in;
+    -o-transition: background-color .3s ease-in;
+    -moz-transition: background-color .3s ease-in;
+    -webkit-transition: background-color .3s ease-in;
 }
 .container:hover, .image-container:hover{
     background-color: var(--secondary-background-color);
@@ -125,7 +128,11 @@ div > span {
     height: 125% !important;
     border-radius: 12px;
     transition: background-color .3s ease-in;
+    -o-transition: background-color .3s ease-in;
+    -moz-transition: background-color .3s ease-in;
+    -webkit-transition: background-color .3s ease-in;
     filter: drop-shadow(9px 9px 3px var(--secondary-background-color));
+    -webkit-filter: drop-shadow(9px 9px 3px var(--secondary-background-color));
 }
 
 
@@ -172,6 +179,9 @@ div > span {
 #first-drop, #second-drop {
     margin-top: 3vh;
     transition: transform .75s ease;
+    -o-transition: -o-transform .75s ease;
+    -moz-transition: -moz-transform .75s ease;
+    -webkit-transition: -webkit-transform .75s ease;
     cursor: pointer;
 }
 #first-drop, #second-drop, #profile {
@@ -204,7 +214,7 @@ div > span {
         width: 2vw;
     }
  } 
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
+@media only screen and (max-width: 1024px) and (min-width: 769px) and (orientation: portrait) {
    :root {
       font-size: 14px;
    }
@@ -224,11 +234,19 @@ div > span {
         top: 12%;
         left: 5%;
     }
+    h3 {
+        margin-top: 5vw;
+    }
+
     #first-drop, #second-drop {
       margin-left: 25%;
   }
  } 
-@media only screen and (max-width: 768px) and (min-width: 481px) {
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) and (orientation: landscape) {
+ }
+
+@media only screen and (max-width: 768px) and (min-width: 481px)  and (orientation: portrait) {
     body {
         grid-template-columns: 100vw;
         grid-template-rows: 12vh 70vh 210vh 265vh 15vh;
@@ -266,6 +284,9 @@ div > span {
         background-color: hsla(0, 100%, 100%, 0.1);
         z-index: 10;
         transition: transform .75s;
+        -o-transition: -o-transform .75s;
+        -moz-transition: -moz-transform .75s;
+        -webkit-transition: -webkit-transform .75s;
     }
     li {
         line-height: 3.8;
@@ -313,7 +334,7 @@ div > span {
         width: 90%;
     }
  } 
- @media only screen and (max-width: 480px) and (min-width: 320px) {
+ @media only screen and (max-width: 480px) and (min-width: 320px) and (orientation: portrait) {
     :root {
         font-size: 13px;
     }
@@ -370,6 +391,9 @@ div > span {
         height: 100vh;
         transform: translateX(31.5vw);
         transition: transform .75s;
+        -o-transition: -o-transform .75s;
+        -moz-transition: -moz-transform .75s;
+        -webkit-transition: -webkit-transform .75s;
     }
 
     img.mobile {

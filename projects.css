@@ -42,7 +42,7 @@ li:nth-child(4) {
 
 
 .image-container {
-    height: 100vh !important;
+    height: 105vh !important;
     margin-bottom: 10vh !important;
 }
 .image-container:nth-child(5) div {
@@ -56,7 +56,7 @@ li:nth-child(4) {
 }
 
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
     body {
         grid-template-rows: 12vh 690vh 14vh;
     }
@@ -65,7 +65,22 @@ li:nth-child(4) {
     }
  }
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+ @media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    body {
+        grid-template-rows: 35vh 820vh 30vh !important;
+    }
+    li:nth-child(1) {
+        transform: translate(20vw, 2.5vh);
+    }
+    .image-container {
+        margin-top: 20vh;
+        height: 130vh !important;
+    }
+    .image-container:nth-child(2) {
+        margin-top: 45vh;
+    }
+ }
+@media only screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
     footer {
         display:  none;
     }
@@ -86,7 +101,7 @@ li:nth-child(4) {
         flex-wrap: wrap;
         position: relative;
         top: 0;
-        left: 9%;
+        left: 100%;
         width: 100%;
         height: 110vh;
         padding: 5%;
@@ -101,8 +116,31 @@ li:nth-child(4) {
         margin-left: 10vw;
     }
  }
-
- @media only screen and (min-width: 320px) and (max-width: 480px) {
+ @media only screen and (min-width: 481px) and (max-width: 768px) and (orientation: landscape) {
+    ul {
+        flex-wrap: wrap;
+        margin-top: 5vh;
+    }
+    main {
+        margin-top: 15vh;
+    }
+    main .image-container:nth-child(2) {
+        margin-top: 20vh;
+    }
+    footer {
+        display: none;
+    }
+    .check {
+        width: 7.5vh;
+        height: 5vh;
+    }
+    .check:before {
+        width: 3.5vh;
+        height: 4vh;
+    }
+    
+ }
+ @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
     footer {
         display: none;
     }

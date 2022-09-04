@@ -19,10 +19,6 @@
     --secondary-accent-color: hsl(0, 0%, 95%);
 }
 
-.check.dark::before {
-    transform: translateX(130%);
-}
-
 body {
     background-color: var(--main-background-color);
     overflow-x: hidden;
@@ -92,6 +88,10 @@ h3 {
 .info h3 {
     position: relative;
     transform: translate(2%, -40%);
+    -o-transform: translate(2%, -40%);
+    -ms-transform: translate(2%, -40%);
+    -moz-transform: translate(2%, -40%);
+    -webkit-transform: translate(2%, -40%);
 }
 
 h4 {
@@ -391,6 +391,14 @@ div > span {
     border-radius: 50%;
 }
 
+@supports (backdrop-filter: blur(1rem)) {
+    ul {
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+    }
+ } 
+
+
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
     body {
         grid-template-rows: 12vh 68vh 125vh 335vh 15vh;
@@ -411,7 +419,8 @@ div > span {
         width: 2vw;
     }
  } 
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) and (orientation: portrait) {
    :root {
       font-size: 14px;
    }
@@ -423,11 +432,11 @@ div > span {
     }
     .check {
         width: 6vw;
-        height: 3.5vw;
+        height: 4.5vw !important;
     }   
     .check:before {
         width: 2.5vw;
-        height: 3.75vh;
+        height: 2.5vh !important;
         top: 12%;
         left: 5%;
     }
@@ -435,7 +444,56 @@ div > span {
       margin-left: 25%;
   }
  } 
-@media only screen and (max-width: 768px) and (min-width: 481px) {
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) and (orientation: landscape) {
+    body {
+        grid-template-rows: 20vh 70vh 300vh 250vh 25vh !important;
+    }
+    .hero {
+        background: linear-gradient(45deg, hsl(356, 90%, 59%), hsl(248, 44%, 39%)) !important;
+    }
+    .projects {
+        transform: translateY(50vw) !important;
+        -o-transform: translateY(50vw);
+        -ms-transform: translateY(50vw);
+        -moz-transform: translateY(50vw);
+        -webkit-transform:translateY(50vw);
+    }
+    footer {
+        transform: translateY(60vw);
+        -o-transform: translateY(60vw);
+        -ms-transform: translateY(60vw);
+        -moz-transform: translateY(60vw);
+        -webkit-transform:translateY(60vw);
+    }
+    ul {
+        background-color: transparent !important;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    .check {
+        margin-left: 2vw;
+        width: 7.5vw;
+        height: 3vw !important;
+    }   
+    .check:before {
+        width: 3vw;
+        height: 5vh !important;
+        top: 12%;
+        left: 5%;
+    }
+    .projects {
+        transform: translateY(250vh) !important;
+    }
+    #profile {
+        transform: scale(2);
+    }
+    .info h3 {
+        margin-left: 7.5vw;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 481px) and (orientation: portrait) {
     body {
         grid-template-columns: 100vw;
         grid-template-rows: 12vh 70vh 210vh 240vh 15vh;
@@ -455,10 +513,17 @@ div > span {
         margin-left: -15vw;
         margin-top: 50vh;
     }
+    nav button:hover {
+        text-decoration: underline;
+        background-color: transparent;
+    }
     button {
         color: var(--main-accent-color);
         background-color: transparent;
         border-radius: 0;
+    }
+    footer {
+        display: none;
     }
     ul {
         flex-wrap: wrap;
@@ -518,14 +583,37 @@ div > span {
         margin-left: -25vw;
         width: 90%;
     }
+
+    button:hover {
+        background-color: transparent;
+        text-decoration: underline;
+    }
  } 
- @media only screen and (max-width: 480px) and (min-width: 320px) {
+ @media only screen and (max-width: 768px) and (min-width: 481px) and (orientation: landscape) {
+    .info h3 {
+        transform: translateY(1vh);
+    }
+    .projects h2 {
+        transform: translateY(10vh);
+    }
+    .projects {
+        transform: translateY(7.5vh);
+    }
+    button:hover {
+        background-color: transparent;
+        text-decoration: underline
+    }
+    ul {
+        background-color: transparent !important;
+    }
+ }
+ @media only screen and (max-width: 480px) and (min-width: 320px) and (orientation: portrait) {
     :root {
         font-size: 13px;
     }
     body {
         grid-template-columns: 100vw;
-        grid-template-rows: 12vh 120vh 240vh 210vh;
+        grid-template-rows: 12vh 150vh 240vh 210vh;
         grid-template-areas: "header"
                              "hero" 
                              "info"
@@ -542,7 +630,9 @@ div > span {
         display: inline-block;
         margin: 1rem;
     }
-
+    h1 {
+        overflow-wrap: break-word;
+    }
     button {
         color: var(--main-accent-color);
         background-color: transparent;
@@ -575,6 +665,7 @@ div > span {
         width: 100vw;
         height: 100vh;
         transform: translateX(30vw);
+        margin-left: 2vw;
         transition: transform .75s;
     }
 
@@ -631,14 +722,15 @@ div > span {
      .projects button {
         margin-bottom: 5%;
     }
+    .projects h2 {
+        transform: translateY(15vh);
+    }
+    nav button:hover {
+        text-decoration: underline;
+        background-color: transparent;
+    }
 
 }  
-
-@supports (backdrop-filter: blur(1rem)) {
-    ul {
-        backdrop-filter: blur(50px);
-    }
- } 
 
 @media print {
     nav {

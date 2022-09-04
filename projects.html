@@ -27,20 +27,20 @@
     <header>
         <em>Mateo_Fain</em>
         <em class="mobile" aria-hidden="true">M_F</em>
-        <img class="mobile" src="./resources/images/menu.svg" alt="Open Menu" aria-hidden="true"/>
-        <img class="mobile" id="close" src="./resources/images/close.svg" alt="Close Menu" aria-hidden="true"/>
+        <img class="mobile" src="./resources/images/menu.svg" alt="" aria-hidden="true"/>
+        <img class="mobile" id="close" src="./resources/images/close.svg" alt="" aria-hidden="true"/>
         <nav>
            <ul role="presentation">
               <li><a href="https://github.com/Chabulsqu?tab=repositories">View my repository</a></li>
-              <li><button onclick="window.location.href='file:///Users/mateofain/Desktop/Mateo/portfolio_project/index.html';">Return to main page</button></li>
+              <li><button type="button" onclick="window.location.href='file:///Users/mateofain/Desktop/Mateo/portfolio_project/index.html';">Return to main page</button></li>
               <li><img src="" alt="Toggle Dark/Light Mode" id="mode-toggle" /></li>
-              <li class="check" onclick="toggleMode()">
+              <li class="check" onclick="toggleMode()" role="switch" aria-checked="false">
               </li>
            </ul>
         </nav>
     </header>
     <main>
-        <h2 class="center">My projects</h2>
+        <h2 class="center">My Projects</h2>
         <div class="image-container" role="presentation">
             <div role="presentation" onclick="window.location.href='https://chabulsqu.github.io/personal_projects/Testimonials/testimonials.html' ;"></div>
             <h3 class="center">Testimonials Grid Section</h3>
@@ -69,12 +69,12 @@
         <div class="image-container" role="presentation">
             <div role="presentation" onclick="window.location.href='https://chabulsqu.github.io/codecademy_projects/company_home_page/company.html' ;"></div>
             <h3 class="center">Paparolio Pizza</h3>
-            <p class="center">A responsive Pizza website using CSS flexbox. <a href="https://chabulsqu.github.io/codecademy_projects/company_home_page/company.html">View page</a></p>
+            <p class="center">A responsive Pizza website using CSS flexbox. <a href="https://chabulsqu.github.io/codecademy_projects/company_home_page/company.html" target="_blank">View page</a></p>
         </div>
     </main>
-    <footer>
-        <p>Found a bug or issue? Report it <a href="https://github.com/Chabulsqu/portfolio_project/issues">here</a></p>
-        <p>copyright</p>
+    <footer class="light">
+        <p>Found a bug or issue? Report it <a href="https://github.com/Chabulsqu/portfolio_project/issues" target="_blank">here</a></p>
+        <p>copyright Mateo Fain</p>
     </footer>
 </body>
 </html>

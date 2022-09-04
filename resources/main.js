@@ -7,6 +7,11 @@ let imageContainers = document.getElementsByClassName('image-container');
 let w = window.innerWidth;
 let menu = document.querySelector('img');
 
+if (w < 769) {
+  document.getElementsByClassName('mobile')[1].alt = 'Open Menu';
+  document.getElementsByClassName('mobile')[2].alt = 'Close Menu';
+}
+
 try {
 document.querySelector('h1').style.opacity = '1';
 document.querySelector('h1').style.top = '12%';
