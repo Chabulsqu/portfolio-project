@@ -1,6 +1,6 @@
 body {
     grid-template-columns: 10vw 80vw 10vw;
-    grid-template-rows: 12vh 680vh 14vh;
+    grid-template-rows: 12vh 700vh 14vh;
     grid-template-areas: "header header header"
                          "none1 main none2"
                          "footer footer footer";
@@ -58,19 +58,23 @@ li:nth-child(4) {
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
     body {
-        grid-template-rows: 12vh 690vh 14vh;
+        grid-template-rows: 12vh 950vh 10vh !important;
     }
     h2 {
         margin-bottom: 20vh;
     }
+    li:nth-child(2) {
+        margin-left: -10vw;
+    }
+
  }
 
  @media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
     body {
-        grid-template-rows: 35vh 820vh 30vh !important;
+        grid-template-rows: 35vh 860vh 20vh !important;
     }
     li:nth-child(1) {
-        transform: translate(20vw, 2.5vh);
+        transform: translate(10vw, 2.5vh);
     }
     .image-container {
         margin-top: 20vh;
@@ -130,15 +134,6 @@ li:nth-child(4) {
     footer {
         display: none;
     }
-    .check {
-        width: 7.5vh;
-        height: 5vh;
-    }
-    .check:before {
-        width: 3.5vh;
-        height: 4vh;
-    }
-    
  }
  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
     footer {
@@ -153,8 +148,14 @@ li:nth-child(4) {
         grid-template-areas: "header header header"
                              "none1 main none2";
     }
+    h2 {
+        margin-bottom: 30vh;
+    }
     .image-container {
         width: 100%;
-        height: 100%;
+        height: 20% !important;
+    }
+    li:nth-child(2) {
+        margin-left: 35vw !important;
     }
  }

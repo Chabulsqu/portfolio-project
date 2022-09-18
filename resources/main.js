@@ -84,7 +84,8 @@ const toggleDropdown = event => {
 }
 
 const openMenu = () => {
-    document.querySelector('ul').style.transform = 'translateX(-31.5vw)';
+    window. scrollTo(0,0);
+    document.querySelector('ul').style.transform = 'translateX(-34vw)';
     document.querySelector('#close').style.display = 'inline-block';
     document.getElementsByClassName('mobile')[1].style.display = 'none';
     document.getElementsByTagName('div')[3].style.visibility = 'hidden';
@@ -92,7 +93,7 @@ const openMenu = () => {
     document.querySelector('h1').style.visibility = 'hidden';
 }
 const closeMenu = () => {
-    document.querySelector('ul').style.transform = 'translateX(31.5vw)';
+    document.querySelector('ul').style.transform = 'translateX(34vw)';
     document.querySelector('#close').style.display = 'none';
     document.getElementsByClassName('mobile')[1].style.display = 'block';
     document.getElementsByTagName('div')[3].style.visibility = 'visible';

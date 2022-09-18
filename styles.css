@@ -392,17 +392,16 @@ div > span {
 }
 
 @supports (backdrop-filter: blur(1rem)) {
-    ul {
-        backdrop-filter: blur(50px);
-        -webkit-backdrop-filter: blur(50px);
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        ul {
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+        }
     }
  } 
 
 
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
-    body {
-        grid-template-rows: 12vh 68vh 125vh 335vh 15vh;
-    }
     .projects {
         position: relative;
         top: 30vh;
@@ -424,21 +423,21 @@ div > span {
    :root {
       font-size: 14px;
    }
-    body {
-        grid-template-rows: 12vh 70vh 210vh 320vh 15vh;
-    }
     .projects {
         margin-top: 120vh;
     }
+    .image-container {
+        margin-top: 50vh;
+    }
     .check {
         width: 6vw;
-        height: 4.5vw !important;
+        height: 4.5vw;
     }   
     .check:before {
         width: 2.5vw;
-        height: 2.5vh !important;
-        top: 12%;
-        left: 5%;
+        height: 2vh;
+        top: 16%;
+        left: 6%;
     }
     #first-drop, #second-drop {
       margin-left: 25%;
@@ -446,18 +445,8 @@ div > span {
  } 
 
 @media only screen and (max-width: 1024px) and (min-width: 769px) and (orientation: landscape) {
-    body {
-        grid-template-rows: 20vh 70vh 300vh 250vh 25vh !important;
-    }
     .hero {
         background: linear-gradient(45deg, hsl(356, 90%, 59%), hsl(248, 44%, 39%)) !important;
-    }
-    .projects {
-        transform: translateY(50vw) !important;
-        -o-transform: translateY(50vw);
-        -ms-transform: translateY(50vw);
-        -moz-transform: translateY(50vw);
-        -webkit-transform:translateY(50vw);
     }
     footer {
         transform: translateY(60vw);
@@ -478,12 +467,9 @@ div > span {
     }   
     .check:before {
         width: 3vw;
-        height: 5vh !important;
+        height: 3vh;
         top: 12%;
-        left: 5%;
-    }
-    .projects {
-        transform: translateY(250vh) !important;
+        left: 6%;
     }
     #profile {
         transform: scale(2);
@@ -494,15 +480,6 @@ div > span {
 }
 
 @media only screen and (max-width: 768px) and (min-width: 481px) and (orientation: portrait) {
-    body {
-        grid-template-columns: 100vw;
-        grid-template-rows: 12vh 70vh 210vh 240vh 15vh;
-        grid-template-areas: "header"
-                             "hero" 
-                             "info"
-                             "projects"
-                             "footer";
-    }
     header, footer, .hero, .projects, .info {
         width: 100%;
     }
@@ -568,9 +545,7 @@ div > span {
     img.mobile {
         display: inline-block;
         transform: scale(.6, .6);
-        position: relative;
-        top: -1vh;
-        left: 37.5vw;
+        margin-left: 37.5vw;
         cursor: pointer;
     }
     img#close {
@@ -632,6 +607,7 @@ div > span {
     }
     h1 {
         overflow-wrap: break-word;
+        line-height: 1.2;
     }
     button {
         color: var(--main-accent-color);
@@ -672,7 +648,7 @@ div > span {
     img.mobile {
         display: inline-block;
         transform: scale(.6, .6);
-        margin-left: 25vw;
+        margin-left: 37.5vw;
     }
     img#close {
         transform: scale(.6, .6) translateX(30vw);
@@ -695,6 +671,7 @@ div > span {
     }
     .projects {
         margin-left: -15vw;
+        margin-top: 135vh !important;
     }
     .badge {
         width: 20vw;
