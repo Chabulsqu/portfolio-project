@@ -21,8 +21,11 @@
 
 body {
     background-color: var(--main-background-color);
-    overflow-x: hidden;
+    position: relative;
 }
+html, body {
+    overflow-x: hidden;
+  }
 
 li {
     display: inline-block;
